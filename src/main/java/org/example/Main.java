@@ -19,5 +19,11 @@ public class Main {
         listSec.display();
         list.sum();
         list.negativeSum();
+        list.deleteFirst();
+        list.display();
+        list.deleteLast();
+        list.display();
+        list.countOccurrencesOf(5);
+        list.display();
     }
 }

@@ -111,4 +111,45 @@ public class LinkedList {
             System.out.println("negativeSum = " + negativeSum);
         }
     }
-}
+
+    public void deleteFirst() {
+        if (head != null) {
+            head = head.next;
+        }
+    }
+
+    public void deleteLast() {
+        if (head == null) {
+            System.out.println("List is null");
+        } else if (head.next == null) {
+            head = null;
+        } else {
+            Node current = head;
+            while (current.next.next != null) {
+                current = current.next;
+            }
+            current.next = null;
+        }
+    }
+/*
+ 1->2->3->4->2->4->1
+
+ */
+    public void countOccurrencesOf(int n){
+        int numberOfOccurrences = 0;
+        Node current = head;
+
+        while(current != null ){
+            if(current.number == n){
+                numberOfOccurrences++;
+            }
+            current = current.next;
+            }
+        System.out.println("Occurrences " + numberOfOccurrences);
+        }
+    }
+
+
+
+
+
