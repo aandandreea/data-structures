@@ -131,23 +131,65 @@ public class LinkedList {
             current.next = null;
         }
     }
-/*
- 1->2->3->4->2->4->1
 
- */
-    public void countOccurrencesOf(int n){
+    /*
+     1->2->3->4->2->4->1
+
+     */
+    public void countOccurrencesOf(int n) {
         int numberOfOccurrences = 0;
         Node current = head;
 
-        while(current != null ){
-            if(current.number == n){
+        while (current != null) {
+            if (current.number == n) {
                 numberOfOccurrences++;
             }
             current = current.next;
-            }
+        }
         System.out.println("Occurrences " + numberOfOccurrences);
+    }
+
+    // x=3 de ex
+// 1 -> 2 -> 3 -> 4 -> null
+    public void deleteNumber(int x) {
+        Node current = head;
+        if (head == null) {
+            System.out.println("List is null");
+        } else {
+            deleteFromHead(x);
+            deleteFromInterior(x);
         }
     }
+
+    public void deleteFromHead(int x) {
+        if (head != null) {
+            while (head != null && head.number == x) {  // verificam daca head nu este null si daca este egal cu x
+
+                Node aux = head.next; // cream o variabila aux care sa preia valoarea urmatorului nod.
+                head.next = null; // nodul urmator devine null
+                head = aux; // noul capat al listei preia valoarea aux.
+
+
+            }
+        }
+    }
+
+    public void deleteFromInterior(int x) {
+        Node prev = head;
+        Node curr = head.next;
+        while (curr != null) {
+            if (curr.number == x) {
+                prev.next = curr.next;
+            }
+            prev = curr;
+            curr = curr.next;
+        }
+
+    }
+}
+
+
+
 
 
 
