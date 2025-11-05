@@ -186,6 +186,29 @@ public class LinkedList {
         }
 
     }
+
+    public void SelectionSort() {
+        Node current = head;
+
+        while (current != null) {
+            Node index = current.next;
+            Node min = current;
+            while (index != null) {
+                if (index.number < min.number) {
+                    min = index; // daca conditia se indeplineste min si index detin aceeasi valoare
+                }
+                index = index.next;
+            }
+            int temp = current.number;
+            current.number = min.number;
+            min.number = temp;
+
+            current = current.next;
+
+        }
+
+
+    }
 }
 
 
