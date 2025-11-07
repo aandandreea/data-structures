@@ -171,7 +171,7 @@ public class LinkedList {
 
 
             }
-        }
+          }
     }
 
     public void deleteFromInterior(int x) {
@@ -180,8 +180,10 @@ public class LinkedList {
         while (curr != null) {
             if (curr.number == x) {
                 prev.next = curr.next;
+            } else {
+                prev = curr;
             }
-            prev = curr;
+
             curr = curr.next;
         }
 
